@@ -28,3 +28,8 @@ priceRetail - цена стандартная за упаковку
 ⦁	Mozilla Firefox 30+,
 ⦁	Opera 20+,
 ⦁	Safari 8+.
+
+# Запуск
+⦁	Установить все зависимости (npm install)
+⦁	Собрать проект (npm run-script build)
+⦁	Запустить проект (node . --server , можно так же указать на каком хосте)
