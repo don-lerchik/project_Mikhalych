@@ -1,0 +1,24 @@
+.pagination {
+  padding: 20px 0;
+  text-align: center;
+}
+.pagination__item {
+  font-size: 15px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 3px 10px;
+  cursor: pointer;
+  &--active {
+    cursor:default;
+    opacity: 0.5;
+  }
+  &--page:not(.pagination__item--active):hover {
+    border-radius: 50%;
+    color: #fff;
+    background-color: #f90;
+  }
+}
+.pagination__item.disabled {
+  cursor: default;
+  opacity: 0.6;
+}

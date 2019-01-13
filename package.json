@@ -1,0 +1,46 @@
+{
+  "name": "test_task_front2",
+  "version": "1.0.0",
+  "description": "nothing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp build",
+    "start": "gulp serve"
+  },
+  "author": "Ganbarov Valery",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/don-lerchik/project_Mikhalych.git"
+  },
+  "dependencies": {
+    "babel-polyfill": "6.26.0",
+    "express": "^4.16.4",
+    "whatwg-fetch": "3.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-external-helpers": "^7.2.0",
+    "autoprefixer": "^9.4.5",
+    "babel-plugin-external-helpers": "6.22.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "babel-preset-env": "1.7.0",
+    "babel-register": "^6.26.0",
+    "browser-sync": "^2.26.3",
+    "css-mqpacker": "^7.0.0",
+    "del": "^3.0.0",
+    "gulp": "3.9.1",
+    "gulp-better-rollup": "^3.4.0",
+    "gulp-csso": "^3.0.1",
+    "gulp-mocha": "^6.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.4",
+    "rollup-plugin-babel": "2.7.1",
+    "rollup-plugin-commonjs": "9.2.0",
+    "rollup-plugin-node-resolve": "4.0.0"
+  }
+}
