@@ -9,7 +9,6 @@ import { initialState, repareState, setPages } from '../data/data';
 export default class ProductScreen {
   constructor(state = initialState) {
     this.state = state;
-    console.log(this.state.productSkip);
     this.urlString = `http://127.0.0.1:3000/api/product?skip=${this.state.productSkip}&limit=${this.state.productLimit}`
     this.view = new PreloaderView();
     this.model = new class extends Model {

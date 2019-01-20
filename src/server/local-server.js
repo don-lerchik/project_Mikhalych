@@ -4,6 +4,7 @@ const path = require(`path`);
 const VARIABLES = require(`../until/variable`);
 const productStore = require(`./router/store/product-store`);
 const productRoute = require(`./router/router`)(productStore);
+const app = express();
 
 const STATIC_DIR = path.join(process.cwd(), `static`);
 
@@ -18,34 +19,20 @@ const ERROR_HANDLER = (err, req, res, _next) => {
   }
 };
 
-class LocalServer {
-  constructor(port) {
-    this.port = port;
-    this.host = VARIABLES.SERVER_HOST;
-    this.app = express();
-  }
+app.use(express.static(STATIC_DIR));
+app.use(`/api/product`, productRoute);
+app.use(NOT_FOUND_HANDLER);
+app.use(ERROR_HANDLER);
 
-  start() {
-    this.init();
-    this.app.listen(this.port, this.host, (err) => {
-      if (err) {
-        console.error(err);
-        return;
-      }
-      console.log(`Local server is running at http://${this.host}:${this.port}`);
-    });
-  }
+const HOSTNAME = process.env.SERVER_HOST || `localhost`;
+const PORT = parseInt(process.env.SERVER_PORT, 10) || 3000;
 
-  init() {
-    this.app.use(express.static(STATIC_DIR));
-    this.app.use(`/api/product`, productRoute);
-    this.app.use(NOT_FOUND_HANDLER);
-    this.app.use(ERROR_HANDLER);
-  }
-}
-
+const serverAddress = `http://${HOSTNAME}:${PORT}`;
 module.exports = {
-  LocalServer,
-  ERROR_HANDLER,
-  NOT_FOUND_HANDLER
+  run() {
+    app.listen(PORT, HOSTNAME, () => {
+      console.log(`Server running at ${serverAddress}/`);
+    });
+  },
+  app
 };

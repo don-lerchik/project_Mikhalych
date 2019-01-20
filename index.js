@@ -1,6 +1,5 @@
-const Initialization = require(`./src/init`);
-const command = process.argv[2];
+require(`dotenv`).config();
 
-const initialization = new Initialization(command);
-initialization.init();
+require(`./src/init`);
+
   

@@ -12,5 +12,3 @@ Thumbs.db
 npm-debug.log*
 node_modules/
 
-# Папка с собранными файлами проекта
-static/

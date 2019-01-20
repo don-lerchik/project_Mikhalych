@@ -1,0 +1,90 @@
+.pagination {
+  padding: 20px 0;
+  text-align: center; }
+
+.pagination__item {
+  font-size: 15px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 3px 10px;
+  cursor: pointer; }
+  .pagination__item--active {
+    cursor: default;
+    opacity: 0.5; }
+  .pagination__item--page:not(.pagination__item--active):hover {
+    border-radius: 50%;
+    color: #fff;
+    background-color: #f90; }
+
+.pagination__item.disabled {
+  cursor: default;
+  opacity: 0.6; }
+
+@-webkit-keyframes bounce {
+  0% {
+    top: 30px;
+    height: 5px;
+    border-radius: 60px 60px 20px 20px;
+    -webkit-transform: scaleX(2);
+            transform: scaleX(2); }
+  35% {
+    height: 20px;
+    border-radius: 50%;
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1); }
+  100% {
+    top: 0; } }
+
+@keyframes bounce {
+  0% {
+    top: 30px;
+    height: 5px;
+    border-radius: 60px 60px 20px 20px;
+    -webkit-transform: scaleX(2);
+            transform: scaleX(2); }
+  35% {
+    height: 20px;
+    border-radius: 50%;
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1); }
+  100% {
+    top: 0; } }
+
+.preloader {
+  width: 800px;
+  background-size: contain;
+  position: relative; }
+
+.preloader__loading {
+  position: absolute;
+  top: 300px;
+  left: 340px;
+  -webkit-filter: drop-shadow(5px 5px 5px #000000);
+          filter: drop-shadow(5px 5px 5px #000000); }
+
+.preloader__text {
+  font-size: 32px;
+  line-height: 45px;
+  font-weight: bold;
+  color: #f90;
+  display: inline-block;
+  margin-left: 5px; }
+
+.preloader__bounceball {
+  position: relative;
+  display: inline-block;
+  height: 37px;
+  width: 20px; }
+  .preloader__bounceball:before {
+    position: absolute;
+    content: '';
+    display: block;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #f90;
+    -webkit-transform-origin: 50%;
+            transform-origin: 50%;
+    -webkit-animation: bounce 500ms alternate infinite ease;
+            animation: bounce 500ms alternate infinite ease; }
